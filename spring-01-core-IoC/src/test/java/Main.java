@@ -16,6 +16,5 @@ public class Main {
         var random =context.getBean(Double.class);
         System.out.println(random);
 
-
     }
 }
