@@ -7,6 +7,11 @@
     <groupId>com.hypertek</groupId>
     <artifactId>spring-01-core-IoC</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compilar.source>21</maven.compilar.source>
+        <maven.compilar.target>21</maven.compilar.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
