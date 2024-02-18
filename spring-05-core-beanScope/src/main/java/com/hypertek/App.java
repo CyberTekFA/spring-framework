@@ -12,12 +12,11 @@ public class App {
         comment.setName("Johnson");
         comment.setText("Spring framework");
         ApplicationContext context =  new AnnotationConfigApplicationContext(CommentConfig.class);
-        var cs1 = context.getBean(CommentService.class);
         var cs2 = context.getBean(CommentService.class);
+        var cs1 = context.getBean(CommentService.class);
         cs1.publishComment(comment);
         cs2.publishComment(comment);
         System.out.println(cs1 == cs2);
-
 
     }
 }
