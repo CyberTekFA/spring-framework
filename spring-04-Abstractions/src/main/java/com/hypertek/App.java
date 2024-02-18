@@ -15,5 +15,6 @@ public class App {
         comment.setText("this is a message");
         commentService.publishComment(comment);
 
+
     }
 }
