@@ -1,10 +1,9 @@
-package com.hypertek.entity;
+package com.hypertek.model;
 
 import lombok.Data;
 
 @Data
 public class Comment {
-    private String name;
+    private String author;
     private String text;
-
 }
