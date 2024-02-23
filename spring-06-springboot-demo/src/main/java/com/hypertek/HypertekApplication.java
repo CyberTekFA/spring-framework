@@ -7,9 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class HypertekApplication {
-
-
-
     public static void main(String[] args) {
         var comment = new Comment();
         comment.setAuthor("John");
