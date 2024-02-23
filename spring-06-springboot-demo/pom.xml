@@ -14,7 +14,7 @@
     <name>spring-06-springboot-demo</name>
     <description>spring-06-springboot-demo</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
