@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mentor</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+    <td>FirstName</td>
+    <td>LastName</td>
+    <td>Age</td>
+    <td>Gender</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${mentor.get(0).getFirstname()}"></td>
+        <td th:text="${mentor.get(0).getLastname()}"></td>
+        <td th:text="${mentor.get(0).getAge()}"></td>
+        <td th:text="${mentor.get(0).getGender()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${mentor.get(1).getFirstname()}"></td>
+        <td th:text="${mentor.get(1).getLastname()}"></td>
+        <td th:text="${mentor.get(1).getAge()}"></td>
+        <td th:text="${mentor.get(1).getGender()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${mentor.get(2).getFirstname()}"></td>
+        <td th:text="${mentor.get(2).getLastname()}"></td>
+        <td th:text="${mentor.get(2).getAge()}"></td>
+        <td th:text="${mentor.get(2).getGender()}"></td>
+    </tr> <tr>
+        <td th:text="${mentor.get(3).getFirstname()}"></td>
+        <td th:text="${mentor.get(3).getLastname()}"></td>
+        <td th:text="${mentor.get(3).getAge()}"></td>
+        <td th:text="${mentor.get(3).getGender()}"></td>
+    </tr>
+
+
+
+
+
+
+
+
+
+
+
+    </tbody>
+</table>
+
+</body>
+</html>
