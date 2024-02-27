@@ -14,4 +14,8 @@ public class StudentController {
         model.addAttribute("student", DataGenerator.createStudent());
         return "students/student";
     }
+    @RequestMapping("/student-info")
+    public String info(){
+        return "students/student-info";
+    }
 }
