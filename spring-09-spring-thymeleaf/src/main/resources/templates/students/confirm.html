@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm</title>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Graduated</th>
+            <th>Batch</th>
+            <th>Company</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr th:each="mentor : ${mentors}">
+            <th th:text="${mentor.getFirstname()}"></th>
+            <th th:text="${mentor.getLastname()}"></th>
+            <th th:text="${mentor.getEmail()}"></th>
+            <th th:text="${mentor.getGender()}"></th>
+            <th th:text="${mentor.isGraduated()}"></th>
+            <th th:text="${mentor.getBatch()}"></th>
+            <th th:text="${mentor.getCompany()}"></th>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

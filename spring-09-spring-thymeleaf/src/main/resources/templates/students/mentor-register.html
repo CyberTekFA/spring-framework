@@ -6,24 +6,24 @@
 </head>
 <body>
 <div align="center">
-    <form th:object="${mentor}">
+    <form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
         <label>First Name:</label>
-        <input type="text" id="firstname" th:field="*{firstname}">
+        <input type="text" id="firstname" th:field="*{firstname}"><br>
         <label>Last Name</label>
-        <input type="text" id="lastname" th:field="*{lastname}">
+        <input type="text" id="lastname" th:field="*{lastname}"><br>
         <label>Email</label>
-        <input type="text" id="email" th:field="*{email}">
+        <input type="text" id="email" th:field="*{email}"><br>
         <label>Gender</label>
-        <input type="radio"  value="Male" th:field="*{gender}">Male
+        <input type="radio"  value="Male" th:field="*{gender}">Male<br>
         <input type="radio"  value="Female" th:field="*{gender}">Female<br>
         <label>Graduate </label>
-        <input type="checkbox" th:field="*{graduated}">
+        <input type="checkbox" th:field="*{graduated}"><br>
         <label>Batch</label>
         <select th:field="*{batch}">
             <option th:each="theBatch : ${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>
-        </select>
+        </select><br>
         <label>Company</label>
-        <input type="text" id="company" th:field="*{company}">
+        <input type="text" id="company" th:field="*{company}"><br>
        <button type="submit">Register</button>
     </form>
 

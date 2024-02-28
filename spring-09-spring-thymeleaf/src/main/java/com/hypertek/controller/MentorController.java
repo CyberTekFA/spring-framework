@@ -4,8 +4,11 @@ import com.hypertek.model.Mentor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,5 +23,13 @@ public class MentorController {
         model.addAttribute("batchList",batchList);
 
         return "/students/mentor-register";
+    }
+
+    @PostMapping("/confirm")
+    public String postMentors(@ModelAttribute("mentor") Mentor mentor , Model model){
+       List<Mentor> mentorList = new ArrayList<>();
+       mentorList.add(mentor);
+        model.addAttribute("mentors",mentorList);
+        return "/students/confirm";
     }
 }
