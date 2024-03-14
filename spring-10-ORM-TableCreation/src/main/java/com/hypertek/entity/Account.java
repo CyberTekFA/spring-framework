@@ -4,20 +4,16 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
+import java.math.BigDecimal;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Student {
+@MappedSuperclass
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstname;
-    private String lastname;
-    private String email;
-    @Transient
-    private String city;
+    private String owner;
+    private BigDecimal balance;
+    private BigDecimal interest;
+
 }

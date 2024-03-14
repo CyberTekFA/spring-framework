@@ -1,7 +1,7 @@
 
-insert into Employee(id,firstname,lastname)
-values(1,'Mike', 'Deluca');
+insert into Employee(firstname,lastname)
+values('Mike', 'Deluca');
 
 
-insert into student(id,firstname,lastname,email)
-values(1,'Mike', 'Smith', 'Mike@gmail.com');
+insert into student(firstname,lastname,email)
+values('Mike', 'Smith', 'Mike@gmail.com');
