@@ -22,6 +22,9 @@ public class Employee extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private BigDecimal salary;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     public Employee(String firstname, String lastname, String email, LocalDate hireDate, Gender gender, BigDecimal salary) {
         this.firstname = firstname;
