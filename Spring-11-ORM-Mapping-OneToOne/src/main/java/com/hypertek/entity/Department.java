@@ -1,0 +1,21 @@
+package com.hypertek.entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@Table(name = "Departments")
+@Data
+@NoArgsConstructor
+public class Department extends BaseEntity{
+    private String department;
+    private String division;
+
+    public Department(String department, String division) {
+        this.department = department;
+        this.division = division;
+    }
+}
