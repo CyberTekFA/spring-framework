@@ -2,6 +2,7 @@ package com.hypertek.bootstraps;
 
 import com.hypertek.entity.Department;
 import com.hypertek.entity.Employee;
+import com.hypertek.entity.Regions;
 import com.hypertek.enums.Gender;
 import com.hypertek.repository.DepartmentRepository;
 import com.hypertek.repository.EmployeeRepository;
@@ -31,7 +32,13 @@ public class DataGenerator implements CommandLineRunner {
         Department d1 = new Department("Sport","OutDoor");
         Department d2 = new Department("Tools","Hardware");
         Department d3 = new Department("Phone & Tablets","Electric");
+        Regions r1 = new Regions("TX","UAS");
+        Regions r2 = new Regions("NC","UAS");
+        Regions r3 = new Regions("CA","UAS");
         emp1.setDepartment(d1);
+        emp1.setRegions(r1);
+        emp2.setRegions(r2);
+        emp3.setRegions(r3);
         emp2.setDepartment(d2);
         emp3.setDepartment(d3);
         List<Employee>employees = Arrays.asList(emp1,emp2,emp3);
