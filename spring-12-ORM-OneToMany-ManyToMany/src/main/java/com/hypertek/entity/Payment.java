@@ -21,6 +21,8 @@ public class Payment extends BaseEntity {
     private PAYMENTSTATUS paymentstatus;
     @OneToOne(cascade = CascadeType.PERSIST)
     private PaymentDetail paymentDetail;
+    @ManyToOne
+    private Merchant merchant;
 
     public Payment(BigDecimal amount, LocalDate createdDate, PAYMENTSTATUS paymentstatus) {
         this.amount = amount;

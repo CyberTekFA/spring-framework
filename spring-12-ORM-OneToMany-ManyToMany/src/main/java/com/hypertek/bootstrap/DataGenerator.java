@@ -1,8 +1,10 @@
 package com.hypertek.bootstrap;
 
+import com.hypertek.entity.Merchant;
 import com.hypertek.entity.Payment;
 import com.hypertek.entity.PaymentDetail;
 import com.hypertek.enums.PAYMENTSTATUS;
+import com.hypertek.repository.MerchantRepository;
 import com.hypertek.repository.PaymentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,9 +16,11 @@ import java.util.List;
 @Component
 public class DataGenerator implements CommandLineRunner {
     private final PaymentRepository paymentRepository;
+    private final MerchantRepository merchantRepository;
 
-    public DataGenerator(PaymentRepository paymentRepository) {
+    public DataGenerator(PaymentRepository paymentRepository, MerchantRepository merchantRepository) {
         this.paymentRepository = paymentRepository;
+        this.merchantRepository = merchantRepository;
     }
 
     @Override
@@ -33,7 +37,14 @@ public class DataGenerator implements CommandLineRunner {
         p2.setPaymentDetail(paymentDetail1);
         p3.setPaymentDetail(paymentDetail2);
         List<Payment> payments = Arrays.asList(p1,p2,p3);
+        Merchant merchant = new Merchant("Amazon","M123",new BigDecimal("0.43"),new BigDecimal("3.45"),5);
+        p1.setMerchant(merchant);
+        p2.setMerchant(merchant);
+        p3.setMerchant(merchant);
+        merchantRepository.save(merchant);
         paymentRepository.saveAll(payments);
+
+
 
     }
 }
