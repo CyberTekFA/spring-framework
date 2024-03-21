@@ -23,6 +23,8 @@ public class Payment extends BaseEntity {
     private PaymentDetail paymentDetail;
     @ManyToOne
     private Merchant merchant;
+    @ManyToOne
+    private Customer customer;
 
     public Payment(BigDecimal amount, LocalDate createdDate, PAYMENTSTATUS paymentstatus) {
         this.amount = amount;

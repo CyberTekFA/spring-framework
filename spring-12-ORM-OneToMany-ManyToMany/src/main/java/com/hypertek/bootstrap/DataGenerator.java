@@ -1,9 +1,11 @@
 package com.hypertek.bootstrap;
 
+import com.hypertek.entity.Customer;
 import com.hypertek.entity.Merchant;
 import com.hypertek.entity.Payment;
 import com.hypertek.entity.PaymentDetail;
 import com.hypertek.enums.PAYMENTSTATUS;
+import com.hypertek.repository.CustomerRepository;
 import com.hypertek.repository.MerchantRepository;
 import com.hypertek.repository.PaymentRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -17,10 +19,12 @@ import java.util.List;
 public class DataGenerator implements CommandLineRunner {
     private final PaymentRepository paymentRepository;
     private final MerchantRepository merchantRepository;
+    private final CustomerRepository customerRepository;
 
-    public DataGenerator(PaymentRepository paymentRepository, MerchantRepository merchantRepository) {
+    public DataGenerator(PaymentRepository paymentRepository, MerchantRepository merchantRepository ,CustomerRepository customerRepository) {
         this.paymentRepository = paymentRepository;
         this.merchantRepository = merchantRepository;
+        this.customerRepository = customerRepository;
     }
 
     @Override
@@ -41,8 +45,15 @@ public class DataGenerator implements CommandLineRunner {
         p1.setMerchant(merchant);
         p2.setMerchant(merchant);
         p3.setMerchant(merchant);
+        Customer customer =  new Customer("32 Darby Dr","John@gmail.com","John","Smith","JohnSmith");
+        p1.setCustomer(customer);
+        p2.setCustomer(customer);
+        p3.setCustomer(customer);
+        customerRepository.save(customer);
         merchantRepository.save(merchant);
         paymentRepository.saveAll(payments);
+
+
 
 
 
