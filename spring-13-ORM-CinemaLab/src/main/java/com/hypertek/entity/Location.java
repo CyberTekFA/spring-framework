@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Location extends BaseEntity{
+    private String name;
+
 }
