@@ -21,7 +21,7 @@ public class Movie extends BaseEntity{
     private LocalDate releaseDate;
     private Integer duration;
     @Column(columnDefinition = "text")
-    private String summery;
+    private String summary;
     @Enumerated(EnumType.STRING)
     private MovieType type;
     @Enumerated(EnumType.STRING)

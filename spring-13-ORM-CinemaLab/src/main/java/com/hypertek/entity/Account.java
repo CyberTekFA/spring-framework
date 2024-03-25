@@ -1,9 +1,7 @@
 package com.hypertek.entity;
 
 import com.hypertek.enums.UserRole;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -21,6 +19,7 @@ public class Account extends BaseEntity{
     private String city;
     private Integer age;
     private String postalCode;
+    @Enumerated(EnumType.STRING)
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
