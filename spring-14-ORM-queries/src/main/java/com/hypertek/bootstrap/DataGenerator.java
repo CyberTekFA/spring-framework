@@ -84,5 +84,7 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println(courseRepository.countCourseByCategory("Spring"));
 
         System.out.println(employeeRepository.getEmployeesDetails(154864));
+
+        courseRepository.getCourseByCategoryAndRatingGreaterThan("Spring","3").forEach(System.out::println);
     }
 }
